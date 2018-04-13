@@ -1,6 +1,6 @@
 ---
-external help file: Logger-help.xml
-Module Name: Logger
+external help file: SimplePowerShellLogger-help.xml
+Module Name: SimplePowerShellLogger
 online version:
 schema: 2.0.0
 ---

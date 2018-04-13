@@ -1,6 +1,15 @@
 # Simple PowerShell Logger Module
 This is a simple Module I have to be created to handle with logging inside of my scripts and modules.
 
+## Installation
+To install the Module form the PowerShell Gallery please use the below command:
+
+``` PowerShell
+Install-Module -Name SimplePowerShellLogger
+```
+
+[PowerShell Gallery Page](https://www.powershellgallery.com/packages/SimplePowerShellLogger/0.1)
+
 ## Examples
 
 1. Create a New Log Called 'DeploymentLog' in the default location.
