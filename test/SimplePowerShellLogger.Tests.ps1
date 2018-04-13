@@ -1,4 +1,4 @@
-$ModuleManifestName = 'Logger.psd1'
+$ModuleManifestName = 'SimplePowerShellLogger.psd1'
 $ModuleManifestPath = "$PSScriptRoot\..\$ModuleManifestName"
 
 Describe 'Module Manifest Tests' {
