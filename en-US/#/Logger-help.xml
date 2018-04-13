@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>New-Logger</command:name>
+      <command:verb>New</command:verb>
+      <command:noun>Logger</command:noun>
+      <maml:description>
+        <maml:para>This Creates an Instance of the Logger Class to enable simple loggging for scripts and modules.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>{{Fill in the Description}}</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>New-Logger</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="None">
+          <maml:name>Name</maml:name>
+          <maml:Description>
+            <maml:para>This is the name of the log used within the log file and in the default file path.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="None">
+          <maml:name>FilePath</maml:name>
+          <maml:Description>
+            <maml:para>This is the file path used to overide the default file path.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="None">
+        <maml:name>Name</maml:name>
+        <maml:Description>
+          <maml:para>This is the name of the log used within the log file and in the default file path.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="None">
+        <maml:name>FilePath</maml:name>
+        <maml:Description>
+          <maml:para>This is the file path used to overide the default file path.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Logger</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This cmdlet returns a Logger object.</maml:para>
+          <maml:para>This object contains the following parameters and Methods Parameters `$FilePath`</maml:para>
+          <maml:para>This Parameter contains the filepath that the Logger Will write to. It is a string object.</maml:para>
+          <maml:para>`$Name`</maml:para>
+          <maml:para>This Parameter contains the name of thew logger class used when writing to the log. It is a string object. Methods ` Log(&lt;string&gt;)`</maml:para>
+          <maml:para>This method logs the string to the Output window and to the command line.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; $Logger = New-Logger -Name 'DeploymentLog'
+PS C:\&gt; $Logger.Log("Create a New Log Entry")</dev:code>
+        <dev:remarks>
+          <maml:para>This command will create a new instance of the logger class at the default location with the Name of 'DeploymentLog'.</maml:para>
+          <maml:para>The default location for a log file is `C:\PSLogging` and the file name follows this format `Log.$LogName.dd.MM.yyyy.log1`.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; $LogPath = 'D:\Logs\Deployment.' + $(get-date -Format "yyyy.MM.dd").ToString() + '.log'
+PS C:\&gt; $Logger = New-Logger -Name 'DeploymentLog' -FilePath $LogPath
+PS C:\&gt; $Logger.Log('Deployment Script Started')</dev:code>
+        <dev:remarks>
+          <maml:para>This example will create a new instance of the logger class uaing the specifed path with the name of 'DeploymentLog'</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+</helpItems>
