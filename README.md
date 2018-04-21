@@ -15,15 +15,18 @@ Install-Module -Name SimplePowerShellLogger
 1. Create a New Log Called 'DeploymentLog' in the default location.
 ``` PowerShell
  $Logger = New-Logger -Name 'DeploymentLog'
- $Logger.Log("Create a New Log Entry")
+ $Logger.Log('Create a New Log Entry')
 ```
 
-This will create the log file at ` C:\PSLogging\Log.$LogName.dd.mm.yyyy.log` and add a new entry with the specified text.
+This will create the log file at ` C:\PSLogging\Log.`**$LogName**`.dd.mm.yyyy.log` and add a new entry with the specified text e.g.:
+```
+[2018.04.21-15.19.00]:[DeploymentLog] Create a New Log Entry
+```
 
 2. Create a New Log at the Specified Path
 ``` PowerShell
 #Prepare the Path Variable
-$LogPath = 'D:\Logs\Deployment.' + $(get-date -Format "yyyy.MM.dd").ToString() + '.log'
+$LogPath = 'D:\Logs\Deployment.' + $(get-date -Format 'yyyy.MM.dd').ToString() + '.log'
 #Create the Logger Class
 $Logger = New-Logger -Name 'DeploymentLog' -FilePath $LogPath
 #Write to the Log file and console.
@@ -38,8 +41,8 @@ The Documentation can be found in the `.\docs` folder.
 If updating the help files please run the following commands to update the PowerShell help files aswell.
 
 ``` PowerShell
-#If necessary istall the PlatyPs module
-Install-Module PlatyPS
+#If necessary istall the PlatyPS module
+#Install-Module PlatyPS
 Import-Module PlatyPS
 Import-Module .\Logger.psd1 -Force
 
