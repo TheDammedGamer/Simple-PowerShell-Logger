@@ -28,10 +28,11 @@ $invokePesterParams = @{
     EnableExit = $false
 }
 
-# Publish Test Results as NUnitXml
+# Invoke Pester Tests
 $testResults = Invoke-Pester @invokePesterParams;
 
 $numberFails = $testResults.FailedCount
 if ($numberFailes -ne 0) {
     Write-Host 'Failed "{0}" unit tests.' -f $numberFails
 }
+
